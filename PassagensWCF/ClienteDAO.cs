@@ -8,16 +8,16 @@ namespace PassagensWCF
 {
     public class ClienteDAO
     {
-        private List<Cliente> clientes = new List<Cliente>();
+        private static List<Cliente> clientes = new List<Cliente>();
 
         public void Add(Cliente c)
         {
-            this.clientes.Add(c);
+            ClienteDAO.clientes.Add(c);
         }
 
         public Cliente buscar(string nome)
         {
-            var resultado = from c in clientes where c.Nome.Equals(nome) select c;
+            var resultado = ClienteDAO.clientes.Where(c => c.Nome.Equals(nome)).FirstOrDefault();
             return (Cliente)resultado;
         }
     }
