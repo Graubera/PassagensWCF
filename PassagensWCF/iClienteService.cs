@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace PassagensWCF
 {
     [ServiceContract]
-    interface iClienteService
+    public interface IClienteService
     {
         [OperationContract]
         Cliente buscar(string nome);

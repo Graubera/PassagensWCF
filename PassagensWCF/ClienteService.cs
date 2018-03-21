@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PassagensWCF
 {
-    class ClienteService : iClienteService
+    public class ClienteService : IClienteService
     {
         public void Add(Cliente c)
         {
